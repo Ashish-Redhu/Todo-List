@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>ToDo List</title>
+</head>
+<body>
+    <h2>List Your daily Jobs here</h2>
+
+    <div class="container" id="maincontainer">
+
+    <!-- This will contain side work bar. -->
+        <div id="workcontainer">
+          
+        </div>
+        
+    <!-- This will contain buttons on mid screen  -->
+        <div id="buttoncontainer">  
+             <div class="buttons" id="button1">Add</div>
+             <div class="buttons" id="button2">Remove</div>
+             <div class="buttons" id="button3">Edit</div>
+        </div>
+
+    </div>
+
+    <!-- Form after clicking a button -->
+       <div class="overlay"></div>   
+        <form action="" id="form">
+            <span>&times;</span>      <!-- Used to add "x" sign.-->         
+            <div>
+            <label for="heading">Heading: </label><br>
+            <input type="text" name="heading" id="heading" class="sections" placeholder="heading of work">
+            </div>
+          
+            <div>
+            <label for="details">Details: </label><br>
+            <input type="text" name="details" id="details" class="sections" placeholder="details of work">
+            </div> 
+            
+            <div>
+            <label for="timing">Time: </label><br>
+            <input type="text" name="timing" id="timing" class="sections" placeholder="time of work">
+            </div>    
+            
+            <button id="addbuttonform">Add</button>
+        </form>
+
+    <script src="home.js"></script>
+</body>
+</html>
+
+
+
+<!-- 3-Functionality -->
+<!-- add, remove, edit -->
+<!-- There should be a side baar where work that has to do will be showing -->
+<!-- There should be 3-buttons on screen middle for add,remove,edit -->
+
+<!-- After click on add button a form will open asking for many things, onclick(remove) a form will open asking for name/timestamp of work to be removed, onclick(edit) a form will open asking for name/timestamp of work to be edited after that again the form containing the details of already added task will be open that can be edited. -->
+
+<!-- Also the sidebar works has to be sorted according to time. -->

@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+}
+#maincontainer{
+    height: 100vh;
+    /* width: 100vw;  */ /*Never set the width otherwise your content will flow out of screen on x-axis.*/
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+
+}
+
+
+
+/* --------------------------------------------------------------------------------------------- */
+#workcontainer{
+    border-right: 2px solid green;
+    border-top: 2px solid green;
+    background-color: aquamarine;
+
+    display: flex;
+    /* flex-wrap: wrap; */  /* code workout fine even without using it */
+    /* box-sizing: border-box; */ /*Without this one also */
+    flex-direction: column;   /* This is mendatory the make the things come in a single column. */
+    gap: 50px;                /* To set a fixed distance b/w all items. */
+    overflow-y:auto;   /* This property is also mendetary to add a scroll bar. If we don't use it then the second box will also readjust the items when first box items full the screen size in y-axis.*/
+}
+
+
+/* --------------------------------------------------------------------------- */
+#buttoncontainer{
+    border-top: 2px solid green;
+    display: flex;
+    flex-wrap: wrap;  /* Here wrapping is necessary to wrap the boxes under a desired width */
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    border: 2px solid black;
+    height: 200px;
+    margin: 5px;
+    flex-basis: calc(34%); /* Ye flex-basis kya bol rha h ki every button ki width 34% of overall box kardo, ab itni width ke sath too only 2-boxes hi aa payenge aik line me.*/
+
+}
+.buttons:nth-child(2)
+{order: 3;}
+
+#button1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    background-color: black;
+    color: white;
+}
+.buttons:hover{
+    cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+    .buttons{
+        flex-basis: calc(99%);
+    }
+    #maincontainer{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------ */
+/* Form */
+#form{
+    border: 2px solid black;
+    /* height: 300px; */
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: large;  
+}
+#form span{
+    /* position: absolute; */
+    right: 0px;
+    top: 0px;
+    background-color: green;
+    color: white;
+    height: 30px;
+    width: 30px;
+    line-height:5px;
+    text-align: center;
+}
+
+.sections{
+    font-size: large;
+}
