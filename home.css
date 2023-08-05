@@ -10,7 +10,6 @@
 }
 
 
-
 /* --------------------------------------------------------------------------------------------- */
 #workcontainer{
     border-right: 2px solid green;
@@ -22,7 +21,7 @@
     /* box-sizing: border-box; */ /*Without this one also */
     flex-direction: column;   /* This is mendatory the make the things come in a single column. */
     gap: 50px;                /* To set a fixed distance b/w all items. */
-    overflow-y:auto;   /* This property is also mendetary to add a scroll bar. If we don't use it then the second box will also readjust the items when first box items full the screen size in y-axis.*/
+    overflow-y:auto;   /* This property is also mendetary to add a scroll bar. If we don't use it then the second box will also re-adjust the items when first box items full the screen size in y-axis.*/
 }
 
 
@@ -35,23 +34,23 @@
     align-items: center;
 }
 .buttons{
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    background-color: black;
+    color: white;
     height: 200px;
     margin: 5px;
     flex-basis: calc(34%); /* Ye flex-basis kya bol rha h ki every button ki width 34% of overall box kardo, ab itni width ke sath too only 2-boxes hi aa payenge aik line me.*/
 
 }
-.buttons:nth-child(2)
-{order: 3;}
 
-#button1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: large;
-    background-color: black;
-    color: white;
-}
+/* This is how you can change the position of child elements within a given box. */
+/* .buttons:nth-child(2)
+{order: 3;} */
+
 .buttons:hover{
     cursor: pointer;
 }
@@ -66,29 +65,87 @@
 
 
 /* ------------------------------------------------------------------------------------ */
-/* Form */
-#form{
-    border: 2px solid black;
-    /* height: 300px; */
-    width: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: large;  
+
+/* Overlay */
+.overlay{
+    width: 100%;
+    height: 100vh;
+    /* The overlay will be taken out of the normal flow of the document and positioned relative to the viewport. It will not move when the user scrolls. */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    /* z-index less means we want to send it backside. */
+    z-index: -1;
+    /* Because we want to make it invisible. */
+    opacity: 0;
+    transition: 1s;
 }
-#form span{
-    /* position: absolute; */
+
+.openoverlay{
+    /* z-index more again because now we want to take it upwards. */
+    z-index:1;
+    /* Now opacity is maximum because we want to see it with complete strength. */
+    opacity:1;
+}
+
+/* Form */
+.form{
+    width: 500px;
+    padding: 15px 25px;
+    background-color: rgb(214, 211, 211);
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    box-shadow: 0px 0px 10px 3px gray;
+    transition: 2s;
+}
+.form label{
+    font-size:x-large;
+}
+.form input{
+    padding: 5px;
+    font-size: medium;
+    margin-bottom: 10px;
+}
+
+.form span{
+    position: absolute;
     right: 0px;
     top: 0px;
     background-color: green;
     color: white;
     height: 30px;
     width: 30px;
-    line-height:5px;
+    line-height:30px;
     text-align: center;
+}
+.form span:hover{
+    cursor: pointer;
 }
 
 .sections{
-    font-size: large;
+    font-size:small;
+    width: 100%;
+}
+
+.form button{
+    margin: 15px 5px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    size: large;
+    font-weight: bold;
+    width: 70px;
+    height: 40px;
+    padding: 10px;
+}
+.form button:hover{
+    cursor: pointer;
+}
+
+.openform{
+    top: 1%;
+    z-index: 7;
 }

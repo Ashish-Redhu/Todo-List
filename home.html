@@ -7,6 +7,7 @@
     <title>ToDo List</title>
 </head>
 <body>
+
     <h2>List Your daily Jobs here</h2>
 
     <div class="container" id="maincontainer">
@@ -19,16 +20,17 @@
     <!-- This will contain buttons on mid screen  -->
         <div id="buttoncontainer">  
              <div class="buttons" id="button1">Add</div>
-             <div class="buttons" id="button2">Remove</div>
-             <div class="buttons" id="button3">Edit</div>
+             <div class="buttons" id="button2">Edit</div>
+             <div class="buttons" id="button3">Remove</div>    
         </div>
 
     </div>
 
     <!-- Form after clicking a button -->
-       <div class="overlay"></div>   
-        <form action="" id="form">
-            <span>&times;</span>      <!-- Used to add "x" sign.-->         
+       <div class="overlay"></div>  
+       <div class="form">    
+        <span id="cross">&times;</span>      <!-- Used to add "x" sign.-->
+        <form action="" >      
             <div>
             <label for="heading">Heading: </label><br>
             <input type="text" name="heading" id="heading" class="sections" placeholder="heading of work">
@@ -44,9 +46,9 @@
             <input type="text" name="timing" id="timing" class="sections" placeholder="time of work">
             </div>    
             
-            <button id="addbuttonform">Add</button>
-        </form>
-
+            <button id="addbuttonform" type="button">Add</button>
+          </form>
+        </div>
     <script src="home.js"></script>
 </body>
 </html>
