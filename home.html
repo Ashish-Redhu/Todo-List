@@ -7,8 +7,12 @@
     <title>ToDo List</title>
 </head>
 <body>
-
-    <h2>List Your daily Jobs here</h2>
+     
+    <div id="mainheading">
+        <h1>List Your daily Jobs here</h1>
+        <span>Redhu</span>
+    </div>
+   
 
     <div class="container" id="maincontainer">
 
@@ -26,9 +30,9 @@
 
     </div>
 
-    <!-- Form after clicking a button -->
+    <!-- Form after clicking Add button. -->
        <div class="overlay"></div>  
-       <div class="form">    
+       <div class="form1">    
         <span id="cross">&times;</span>      <!-- Used to add "x" sign.-->
         <form action="" >      
             <div>
@@ -43,12 +47,31 @@
             
             <div>
             <label for="timing">Time: </label><br>
-            <input type="text" name="timing" id="timing" class="sections" placeholder="time of work">
+            <input type="time" name="timing" id="timing" class="sections" placeholder="time of work">
             </div>    
             
             <button id="addbuttonform" type="button">Add</button>
           </form>
         </div>
+
+        <div class="form2">
+            <span id="cross2">&times;</span>
+            <h3>
+                Enter the time of the task you want to remove.
+            </h3>
+            <hr>
+            
+            <div>
+                <label for="time">Time: </label>
+                <input type="time" name="time" id="time" >
+            </div> 
+
+            <div>
+                <button id="removebuttonform" type="button">Remove</button>
+            </div>  
+        </div>
+
+    
     <script src="home.js"></script>
 </body>
 </html>
